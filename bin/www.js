@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app.ts');
+var app = require('../app.js');
 var debug = require('debug')('tp-framework:server');
 var http = require('http');
 

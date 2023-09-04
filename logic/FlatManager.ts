@@ -13,7 +13,7 @@ export class FlatManager{
      * @param dao Data access object of the flat.
      * @constructor
      */
-    public FlatManager(dao : FlatDao){
+    constructor(dao : FlatDao){
         this.flatDao = dao;
     }
 
