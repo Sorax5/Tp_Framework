@@ -35,8 +35,11 @@ class SQLiteDatabase implements Database {
      * @param sql
      */
     query(sql: string): any[] {
-        const results = this.db.query(sql);
-        return results.map((row: any) => row);
+        let result = null;
+        this.db.all(sql, (err, rows) => {
+            result = rows;
+        });
+        return result;
     }
 
     /**
@@ -64,8 +67,8 @@ class SQLiteDatabase implements Database {
      * @param where
      */
     exists(tableName: string, where: string): boolean {
-        const result = this.db.query("SELECT * FROM " + tableName + " WHERE " + where);
-        return result.length > 0;
+        const result = this.db.get("SELECT * FROM " + tableName + " WHERE " + where);
+        return result !== undefined;
     }
 
     /**
