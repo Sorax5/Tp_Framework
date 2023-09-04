@@ -1,3 +1,5 @@
+import {FlatManager} from "./logic/FlatManager";
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -6,6 +8,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var appartementRouter = require('./routes/appartement');
 
 var app = express();
 
@@ -21,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/appartement', appartementRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

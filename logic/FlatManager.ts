@@ -4,7 +4,7 @@ import {Flat} from "./Flat";
 /**
  * Manages the flat {@link Flat}
  */
-class FlatManager{
+export class FlatManager{
 
     private flatDao : FlatDao;
 
